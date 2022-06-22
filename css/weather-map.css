@@ -1,0 +1,129 @@
+body {
+    background-image: linear-gradient(#306e96, white);
+    font-family: Comfortaa, sans-serif;
+    text-shadow: 1px 1px 10px #1c4970;
+}
+
+#map {
+    width: 99.5%;
+    height: 250px;
+    text-shadow: none;
+    border: 1px solid #306e96;
+    border-radius: 5px;
+    padding: 0;
+    margin: auto;
+}
+
+.my-card {
+    border: 1px solid black;
+}
+
+.my-card-header {
+    background-color: #124654;
+    color: white;
+    width: 100%;
+    margin: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: #306e96;
+}
+
+.my-card-body {
+    background-color: #159ABA;
+    color: white;
+    border-width: 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #306e96;
+}
+
+.my-card-footer {
+
+}
+
+.forecast-card {
+    background-color: #159ABA;
+    color: white;
+    width: 180px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #124654;
+}
+
+#weather-icon {
+    width: 100px;
+    margin-left: 0;
+}
+
+h3 {
+    font-size: 80px;
+}
+
+h6 {
+    text-shadow: none;
+}
+
+#top-link {
+    visibility: hidden;
+}
+
+.marker {
+    background-image: url("/img/red-pin.png");
+    background-size: cover;
+    width: 25px;
+    height: 48px;
+}
+
+@media (max-width: 768px) {
+    body {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section:nth-of-type(3) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .forecast-card {
+        margin-left: auto;
+        width: 100%;
+    }
+
+    h6 {
+        flex-wrap: wrap;
+    }
+
+    a {
+        font-family: sans-serif;
+        text-shadow: 1px 1px 10px #74b1ea;
+    }
+
+    #top-link {
+        visibility: visible;
+    }
+
+    #map {
+        height: 200px;
+        width: 99.5%;
+    }
+}
+
+@media (min-width: 900px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+}
