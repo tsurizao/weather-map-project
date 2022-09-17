@@ -112,7 +112,7 @@ map.on("click", function (e) {
 
 // Updates current weather and forecast based on pin location
 function getWeather() {
-    $.get("http://api.openweathermap.org/data/2.5/onecall", {
+    $.get("https://api.openweathermap.org/data/2.5/onecall", {
         APPID: OPEN_WEATHER_KEY,
         lat: marker.getLngLat().lat,
         lon: marker.getLngLat().lng,
@@ -122,7 +122,7 @@ function getWeather() {
         $("#current-day").html(`, ${formatTime(appendLeadingZeroes(data.current.dt))}`)
         $("#weather").html(data.current.weather[0].description);
         let iconCode = data.current.weather[0].icon;
-        let iconUrl = `http://openweathermap.org/img/wn/${iconCode}@4x.png`;
+        let iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
         $("#weather-icon").attr('src', iconUrl);
         $("#temp").html(`${data.current.temp.toFixed(1)}°F`);
         $("#high-low").html(`Day ${data.daily[0].temp.max.toFixed(1)}° • Night ${data.daily[0].temp.min.toFixed(1)}°`);
@@ -134,7 +134,7 @@ function getWeather() {
         data.daily.forEach(function (day, index) {
             if (index < 5) {
                 iconCode = day.weather[0].icon;
-                iconUrl = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+                iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
                 $("#forecast").append(`
                     <div class='card forecast-card'>
                     <div class='d-flex row justify-content-center'>
@@ -166,7 +166,7 @@ function updateInformation() {
             map.jumpTo({center: coords, zoom: 9});
             getWeather();
         } else {
-            $.get("http://api.openweathermap.org/data/2.5/weather", {
+            $.get("https://api.openweathermap.org/data/2.5/weather", {
                 APPID: OPEN_WEATHER_KEY,
                 q: city,
                 units: "imperial"
